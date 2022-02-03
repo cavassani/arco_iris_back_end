@@ -1,0 +1,18 @@
+{
+  "name": "arco_iris_back_end",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "backend para aplicacao da loja arco iris, um simples controle de estoque",
+  "main": "index.js",
+  "scripts": {
+    "dev": "export DEBUG=arco_iris_back_end:* && nodemon server/bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Marcelo Cavassani <marceloscavassani@gmail.com> Start Anything",
+  "license": "ISC",
+  "dependencies": {
+    "dnscache": "^1.0.2",
+    "express": "^4.17.2"
+  }
+}
