@@ -40,6 +40,10 @@ $ cd server
 # Instale as dependências
 $ npm install
 
+$ npm install -g express
+
+$ npm install -g nodemon
+
 # Execute a aplicação em modo de desenvolvimento
 $ npm run dev
 
