@@ -12,6 +12,7 @@
   "author": "Marcelo Cavassani <marceloscavassani@gmail.com> Start Anything",
   "license": "ISC",
   "dependencies": {
+    "config": "^3.3.7",
     "dnscache": "^1.0.2",
     "express": "^4.17.2"
   }
