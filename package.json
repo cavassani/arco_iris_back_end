@@ -13,7 +13,10 @@
   "license": "ISC",
   "dependencies": {
     "config": "^3.3.7",
+    "debug": "^4.3.3",
     "dnscache": "^1.0.2",
-    "express": "^4.17.2"
+    "express": "^4.17.2",
+    "http-errors": "^2.0.0",
+    "mongoose": "^6.2.2"
   }
 }
