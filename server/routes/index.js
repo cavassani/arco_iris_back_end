@@ -1,6 +1,8 @@
 import { Router } from 'express'
+import productRoutes from './product.js'
 const routes = new Router()
 
+routes.use('/products', productRoutes)
 //rotas
 routes.get('/', (req,res) => {
     res.send('Olá mundo, sou o app arco iris')
