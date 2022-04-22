@@ -17,6 +17,7 @@
     "dnscache": "^1.0.2",
     "express": "^4.17.2",
     "http-errors": "^2.0.0",
-    "mongoose": "^6.2.2"
+    "mongoose": "^6.2.2",
+    "multer": "^1.4.4"
   }
 }
