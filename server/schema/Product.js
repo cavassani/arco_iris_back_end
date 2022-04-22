@@ -6,5 +6,5 @@ const Product = new Schema({
     price: Number,
     image: String
 }) 
-
+Product.set('timestamps', true);
 export default Product

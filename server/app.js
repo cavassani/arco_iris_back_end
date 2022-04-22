@@ -3,10 +3,11 @@ import express from 'express'
 import routes from './routes/index.js'
 import Home from './controller/Home.js'
 import AppController from './controller/App.js'
+import multer from 'multer'
 const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: true}))
-
+//app.use(multer())
 app.use(routes)
 app.use(AppController.notFound)
 app.use(AppController.handleError)
