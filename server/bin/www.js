@@ -1,14 +1,22 @@
 #!/usr/bin/env node
 import app from '../app.js'
+import express from 'express'
 import debug from 'debug'
 import cluster from 'cluster'
 import os from 'os'
 import dnscache from 'dnscache'
 import http from 'http'
 import https from 'https'
+import path from 'path'
+import {fileURLToPath} from 'url';
 
 http.globalAgent.keepAlive = true
 https.globalAgent.keepAlive = true
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+app.use(express.static(path.join(__dirname, '../../public')));
 
 dnscache({
   "enable" : true,
@@ -18,6 +26,7 @@ dnscache({
 
 const cpus = os.cpus()
 const log = debug('livro_nodejs:www')
+
 const onWorkerError = (code, signal) => log(code, signal)
 if (cluster.isMaster) {
   cpus.forEach(_ => {

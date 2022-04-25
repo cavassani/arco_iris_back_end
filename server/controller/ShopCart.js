@@ -18,7 +18,7 @@ const ShopCart = {
             let cart = await shopRepository.ShopCart();
 
             let productDetails = await productRepository.byId(productId)
-console.log(productDetails)
+            console.log(productDetails)
             if (!productDetails) {
                 return response.status(500).json({
                     type: "Não encontrado",
@@ -91,7 +91,7 @@ console.log(productDetails)
     },
     async getCart(request, response) {
         try {
-            let cart = await shopRepository.cart()
+            let cart = await shopRepository.carts()
 
             if (!cart) {
                 return response.status(400).json({
@@ -105,7 +105,7 @@ console.log(productDetails)
                 data: cart
             })
         } catch (error) {
-            res.status(400).json({
+            response.status(400).json({
                 type: "invalid",
                 msg: "Algo deu errado",
                 error: error
@@ -114,7 +114,7 @@ console.log(productDetails)
     },
     async emptyCart(request, response) {
         try {
-            let cart = await shopRepository.cart();
+            let cart = await shopRepository.carts();
             cart.items = []
             cart.subTotal = 0
             let data = await cart.save();

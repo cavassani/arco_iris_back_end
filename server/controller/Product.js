@@ -32,6 +32,14 @@ const Product = {
         .then(result => response.json(result))
         .catch(next)
     },
+    upload(request,response,next) {
+        const images = request.files
+        let data = repository.upload(images)
+
+        response.status(201).json({
+            images: data
+        })
+    },
     create(request,response,next) {
         repository.create(request.body)
         .then(result => response.status(201).json(result))

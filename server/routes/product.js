@@ -14,7 +14,8 @@ const verifyId = (request, response, next) => {
 }
 productRoutes.get('/', controller.list)
 productRoutes.get('/:id',verifyId,  controller.byId)
-productRoutes.post('/', multerInst.array('image', 5) , controller.create)
+productRoutes.post('/upload-images', multerInst.array('image', 5), controller.upload)
+productRoutes.post('/', controller.create)
 productRoutes.put('/:id', verifyId, controller.updateById)
 productRoutes.delete('/:id', verifyId, controller.deleteById)
 
