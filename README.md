@@ -16,7 +16,13 @@
 
 ## Features
 
-- [ ] Cadastro de produtos
+- [x] Cadastro de produtos
+- [x] Update de produtos
+- [x] Listagem de produtos
+- [x] Remoção de produtos
+- [x] Upload de imagens
+- [ ] Cadastro carrinho
+- [ ] Update de carrinho 
 
 
 ## Pré-requisites
