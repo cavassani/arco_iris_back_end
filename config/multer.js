@@ -1,7 +1,6 @@
 import * as path from 'path'
 import multer from 'multer'
 
-//image upload
 const storage = multer.diskStorage({
     destination: (req, res, cb) => {
          cb(null, path.join("./public/images/"));
@@ -10,14 +9,15 @@ const storage = multer.diskStorage({
         cb(null, new Date().toISOString() + file.originalname);
     }
 });
-// checking file type
+
 const fileFilter = (req, file, cb) => {
     if (file.mimetype.startsWith('image')) {
         cb(null, true);
     } else {
-        cb(new Error('Not an image! Please upload an image.', 400), false);
+        cb(new Error('Não é uma imagem, por favor suba apenas imagens.', 400), false);
     }
 };
+
 const upload = multer({
     storage: storage,
     limits: {

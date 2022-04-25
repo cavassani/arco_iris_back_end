@@ -11,6 +11,10 @@ const Product = {
     byId(id) {
         return model.findOne({ _id: id })
     },
+    upload(data) {
+        const images = data.map((image) => {return image.path.replace(/public/g, '')})
+        return images
+    },
     create(data) {
         const product = new model(data)
         return product.save()

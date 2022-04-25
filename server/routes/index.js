@@ -6,10 +6,10 @@ const routes = new Router()
 routes.use('/products', productRoutes)
 routes.use('/shopCarts', shopCartRoutes)
 //rotas
+
 routes.get('/', (req,res) => {
     res.send('Olá mundo, sou o app arco iris')
 })
-
 // apenas para nao devolver um favicon com erro
 routes.use((request, response, next) =>{
     if(request.url ==='/favicon.ico') {
